@@ -18,7 +18,8 @@ To install the project, run the command: npm install
 To use the project run the following command line: node index.js
 
 ## License
-This project is licensed under the MIT License.
+This project is licensed under the MIT License. [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 
 ## Contributing
 To contribute to the project follow github guidlines
