@@ -12,10 +12,10 @@ This project is a command-line tool that dynamically creates a professional READ
 - [Questions](#questions)
 
 ## Installation
-To install the project, run the command npm install
+To install the project, run the command: npm install
 
 ## Usage
-To use the project run the following command line node index.js
+To use the project run the following command line: node index.js
 
 ## License
 This project is licensed under the MIT License.
