@@ -1,4 +1,3 @@
-// index.js file
 const fs = require('fs').promises;
 const path = require('path');
 const inquirer = require('inquirer');
