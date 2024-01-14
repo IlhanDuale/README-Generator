@@ -1,7 +1,8 @@
-const fs = require("fs");
+// index.js file
+const fs = require('fs').promises;
 const path = require('path');
 const inquirer = require('inquirer');
-const generateMarkdown = require("./starter/utils/generateMarkdown");
+const generateMarkdown = require('./starter/utils/generateMarkdown');
 
 // Array of questions for user
 const questions = [{
@@ -53,18 +54,23 @@ const questions = [{
 ];
 
 // Function to write README file
-function writeToFile(fileName, data) {
-    return fs.writeFileSync(fileName, data);
+async function writeToFile(fileName, data) {
+    try {
+        await fs.writeFile(fileName, data);
+        console.log(`README generated at ${fileName}`);
+    } catch (error) {
+        console.error('Error writing README file:', error);
+    }
 }
 
 // Function to initialize program
 function init() {
-    inquirer.prompt(questions)
-        .then((answers) => {
+    inquirer
+        .prompt(questions)
+        .then(async(answers) => {
             const readmeContent = generateMarkdown(answers);
             const outputPath = path.join(process.cwd(), 'README.md');
-            writeToFile(outputPath, readmeContent);
-            console.log(`README generated at ${outputPath}`);
+            await writeToFile(outputPath, readmeContent);
         })
         .catch((error) => {
             console.error('Error:', error);
